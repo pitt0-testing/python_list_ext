@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "list-ext"
+version = "0.0.1"
+authors = [
+  { name="Samuele Baffo", email="pitto.developer@gmail.com" },
+]
+description = "A package that extends list object with some methods from C# and some others"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pitt0/list_ext"
+"Repository" = "https://github.com/pitt0/list_ext"
