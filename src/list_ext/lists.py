@@ -6,7 +6,7 @@ T = TypeVar("T")
 R = TypeVar("R")
 L = TypeVar("L", bound=Sequence) # used to indicate return type in python 3.12
 
-class MyList(list[T]):
+class List(list[T]):
     # NOTE: Creating a list like [i for i in range(_)] is faster than creating a tuple the same way, so stick to lists for now
 
     @property
@@ -59,11 +59,11 @@ class MyList(list[T]):
     # NOTE: As of python 3.12, functions type parameter will come out and the methods below should have an L type parameter
 
     # when type parameters will come out this will become a @staticmethod
-    def new(self, old: Sequence[T]) -> "MyList"[T]:
-        return MyList(el for el in old)
+    def new(self, old: Sequence[T]) -> "List"[T]:
+        return List(el for el in old)
 
-    def where(self, predicate: Callable[[T], bool]) -> "MyList"[T]:
-        return MyList(el for el in self if predicate(el))
+    def where(self, predicate: Callable[[T], bool]) -> "List"[T]:
+        return List(el for el in self if predicate(el))
 
-    def select(self, predicate: Callable[[T], R]) -> "MyList"[R]:
-        return MyList(predicate(el) for el in self)
+    def select(self, predicate: Callable[[T], R]) -> "List"[R]:
+        return List(predicate(el) for el in self)
